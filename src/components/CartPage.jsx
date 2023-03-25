@@ -36,7 +36,7 @@ const CartPage = () => {
       <div className="max-w-[1000px] mx-auto">
         {cart.length === 0 ? (
           <div className="text-center">
-            <h3 className="text-3xl font-medium mb-7">Your cart is empty!</h3>
+            <h3 className="text-xl mb-7">Your cart is empty!</h3>
             <Link to="/">
               <Button>Go to Shop</Button>
             </Link>

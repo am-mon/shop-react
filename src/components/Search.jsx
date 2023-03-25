@@ -8,7 +8,7 @@ import PageTemplate from "./PageTemplate";
 const Search = () => {
   const { name } = useParams();
   const { products, search, isLoading } = StateContextCustom();
-  
+
   const filter = products.filter((pd) =>
     pd.title.toLowerCase().includes(name.toLocaleLowerCase())
   );
@@ -22,10 +22,13 @@ const Search = () => {
         <div>
           <div>
             {filter.length >= 1 ? (
-              <div className="grid grid-cols gap-7 md:grid-cols-3 lg:grid-cols-4">
-                {filter?.map((product) => {
-                  return <Product key={product.id} {...product} />;
-                })}
+              <div>
+                <h2 className="mb-5 text-lg">Search Results:</h2>
+                <div className="grid grid-cols gap-7 md:grid-cols-3 lg:grid-cols-4">
+                  {filter?.map((product) => {
+                    return <Product key={product.id} {...product} />;
+                  })}
+                </div>
               </div>
             ) : (
               <div className="text-center text-xl min-h-[40vh] flex items-center justify-center">
