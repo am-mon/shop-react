@@ -8,6 +8,7 @@ import PageTemplate from "./PageTemplate";
 const CartPage = () => {
   const [mainTotal, setMainTotal] = useState(0);
   const {
+    dispatch,
     state: { cart },
   } = StateContextCustom();
   // console.log(cart);
@@ -38,7 +39,7 @@ const CartPage = () => {
           <div className="text-center">
             <h3 className="text-xl mb-7">Your cart is empty!</h3>
             <Link to="/">
-              <Button>Go to Shop</Button>
+              <Button>Back to Shop</Button>
             </Link>
           </div>
         ) : (
@@ -55,10 +56,15 @@ const CartPage = () => {
                 />
               );
             })}
-            <div className="flex py-5">
-              <div className="w-[20%] font-medium text-xl">Total</div>
-              <div className="w-[80%] box-border pl-[5%] flex justify-between items-start font-medium text-xl">
-                ${mainTotal}
+            <div className="flex justify-between py-5">
+              <button
+                onClick={() => dispatch({ type: "EMPTY_CART" })}
+                className="min-w-[130px] bg-blue-900 hover:bg-blue-800 text-white py-2 px-3 rounded leading-tight"
+              >
+                Empty Cart
+              </button>
+              <div className="w-[80%] box-border pl-[5%] flex justify-end items-start font-medium text-xl">
+                Total: ${mainTotal}
               </div>
             </div>
           </div>

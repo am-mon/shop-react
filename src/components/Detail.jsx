@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Button from "./Button";
 import Loader from "./Loader";
 import PageTemplate from "./PageTemplate";
@@ -36,8 +36,11 @@ const Detail = () => {
             <p className="mt-2 text-gray-400 text-sm">{product.category}</p>
             <p className="my-5 text-3xl">${product.price}</p>
             <p className="mt-2">Available Stocks: {product.stock}</p>
-            <p className="mt-2 mb-4">{product.description}</p>
+            <p className="mt-5 mb-4">{product.description}</p>
             {/* <Button>Add to Cart</Button> */}
+            <Link to="/">
+              <Button>Back to Shop</Button>
+            </Link>
           </div>
         </div>
       )}

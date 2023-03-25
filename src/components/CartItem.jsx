@@ -38,12 +38,8 @@ const CartItem = ({
       </div>
       <div className="w-[80%] box-border pl-[5%] flex justify-between items-start">
         <div className="w-[60%]">
-          <p className="font-medium text-gray-400 text-sm md:text-base">
-            {item.title}
-          </p>
-          <p>
-            ${item.price} * {quantity} = ${oneItemPrice}
-          </p>
+          <p className="font-medium text-sm md:text-base mb-2">{item.title}</p>
+          <p className="text-gray-400 ">${item.price}</p>
         </div>
         <div className="w-[40%] text-right">
           <div>
@@ -63,13 +59,15 @@ const CartItem = ({
               +
             </button>
           </div>
-
-          <button
-            onClick={removeItem}
-            className="mt-3 text-base md:text-[1.4em] text-gray-400 hover:text-blue-800"
-          >
-            <ImBin />
-          </button>
+          <div className="flex justify-end items-center mt-3 ">
+            <p className="font-medium">${oneItemPrice}</p>
+            <button
+              onClick={removeItem}
+              className="text-base md:text-[1.4em] text-gray-400 hover:text-blue-800 ml-2"
+            >
+              <ImBin />
+            </button>
+          </div>
         </div>
       </div>
     </div>
