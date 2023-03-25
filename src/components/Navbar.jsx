@@ -26,7 +26,7 @@ const Navbar = () => {
   } = StateContextCustom();
 
   return (
-    <div className="bg-blue-900">
+    <div className="bg-blue-900 fixed top-0 left-0 right-0">
       <div className="container mx-auto box-border p-4">
         <div className="flex justify-between items-center">
           <div className="w-[30%]">

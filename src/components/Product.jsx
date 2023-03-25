@@ -9,7 +9,7 @@ const Product = (props) => {
   const { dispatch } = StateContextCustom();
 
   return (
-    <div className="box-border p-5 bg-white rounded shadow-lg shadow-gray-200 text-center text-sm md:text-base">
+    <div className="box-border p-5 bg-white rounded shadow-[0_10px_15px_6px_rgba(0,0,0,0.3)] shadow-gray-200 text-center text-sm md:text-base">
       <div className="flex h-[100px] justify-center items-center mb-4 md:h-[200px]">
         <img src={thumbnail} className="max-w-[100%] max-h-[100%]" />
       </div>
